@@ -90,17 +90,16 @@
             <div class="card mt-4">
                 <h3 class="font-bold text-lg mb-3"><i class="fa fa-pencil text-primary mr-1"></i> 当日执行记录</h3>
                 <div class="mb-3">
-                    <label class="block text-sm text-gray-600 mb-1">完成状态</label>
-                    <select id="dayStatus" class="w-full border rounded-lg px-3 py-2 outline-primary">
-                        <option value="未开始">未开始</option>
-                        <option value="已完成">已完成</option>
-                        <option value="部分完成">部分完成</option>
-                        <option value="未完成">未完成</option>
-                    </select>
+                    <label class="block text-sm text-gray-600 mb-1">体重（斤）</label>
+                    <input type="number" id="dayWeight" step="0.01" min="0" class="w-full border rounded-lg px-3 py-2 outline-primary" placeholder="例如：120.50">
+                </div>
+                <div class="mb-3">
+                    <label class="block text-sm text-gray-600 mb-1">运动</label>
+                    <input type="text" id="dayExercise" class="w-full border rounded-lg px-3 py-2 outline-primary" placeholder="记录今天的运动内容，如：跑步30分钟">
                 </div>
                 <div class="mb-3">
                     <label class="block text-sm text-gray-600 mb-1">备注记录</label>
-                    <textarea id="dayRemark" rows="3" class="w-full border rounded-lg px-3 py-2 outline-primary" placeholder="记录饮食感受、体重变化、调整事项..."></textarea>
+                    <textarea id="dayRemark" rows="3" class="w-full border rounded-lg px-3 py-2 outline-primary" placeholder="记录饮食感受、调整事项..."></textarea>
                 </div>
                 <button onclick="saveDayRecord()" class="w-full bg-primary text-white py-2 rounded-lg font-medium">
                     <i class="fa fa-save mr-1"></i> 保存记录
@@ -329,15 +328,17 @@
         // 加载当日记录
         function loadDayRecord() {
             const rec = store.dayRecord[currentDay - 1] || {};
-            document.getElementById('dayStatus').value = rec.status || '未开始';
+            document.getElementById('dayWeight').value = rec.weight || '';
+            document.getElementById('dayExercise').value = rec.exercise || '';
             document.getElementById('dayRemark').value = rec.remark || '';
         }
 
         // 保存当日记录
         function saveDayRecord() {
-            const status = document.getElementById('dayStatus').value;
+            const weight = document.getElementById('dayWeight').value;
+            const exercise = document.getElementById('dayExercise').value;
             const remark = document.getElementById('dayRemark').value;
-            store.dayRecord[currentDay - 1] = { status, remark };
+            store.dayRecord[currentDay - 1] = { weight, exercise, remark };
             saveStore();
             alert('当日记录保存成功！');
         }
