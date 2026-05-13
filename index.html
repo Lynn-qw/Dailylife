@@ -1,245 +1,358 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>五一川西行程 2026</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;background:#f5f5f5;color:#333;line-height:1.6;padding-bottom:72px}
-.hd{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:32px 20px 24px;text-align:center}
-.hd h1{font-size:22px;font-weight:700;margin-bottom:4px}
-.hd p{font-size:13px;opacity:.85}
-.btabs{position:fixed;bottom:0;left:0;right:0;z-index:200;display:flex;background:#fff;border-top:1px solid #eee;box-shadow:0 -2px 10px rgba(0,0,0,.06);padding-bottom:env(safe-area-inset-bottom)}
-.bt{flex:1;display:flex;flex-direction:column;align-items:center;padding:8px 0 6px;font-size:11px;color:#999;cursor:pointer;gap:2px}
-.bt .ic{font-size:20px}.bt.on{color:#667eea}
-.sec{display:none;padding:16px}.sec.on{display:block}
-.dc{background:#fff;border-radius:14px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.05);overflow:hidden}
-.dh{padding:14px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer}
-.dh .lt{display:flex;align-items:center;gap:10px}
-.badge{width:44px;height:44px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:11px;flex-shrink:0}
-.badge .n{font-size:17px}
-.dh h3{font-size:15px;font-weight:600}.dh .sub{font-size:12px;color:#999;margin-top:1px}
-.dh .ar{font-size:11px;color:#ccc;transition:transform .3s}.dc.op .ar{transform:rotate(90deg)}
-.dy{padding:0 18px 18px;display:none}.dc.op .dy{display:block}
-.tl{position:relative;padding-left:22px}
-.tl::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:#e8e8e8}
-.ti{position:relative;margin-bottom:14px}.ti:last-child{margin-bottom:0}
-.dot{position:absolute;left:-22px;top:6px;width:12px;height:12px;border-radius:50%;border:3px solid;background:#fff}
-.ti .tm{font-size:12px;color:#999;margin-bottom:2px}
-.ti .ct{font-size:14px}.ti .tp{font-size:12px;color:#ff9800;margin-top:3px}
-.ti .ps{font-size:12px;color:#e91e63;margin-top:3px}
-.photo-gallery{display:flex;gap:8px;margin-top:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
-.photo-gallery::-webkit-scrollbar{display:none}
-.photo-card{flex:none;width:140px;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-.photo-card img{width:140px;height:100px;object-fit:cover;display:block}
-.photo-card .cap{padding:4px 6px;font-size:10px;color:#666;background:#fafafa;text-align:center}
-.tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;margin-right:3px;font-weight:500}
-.tf{background:#e3f2fd;color:#1976d2}.tt{background:#f3e5f5;color:#7b1fa2}
-.ts{background:#e8f5e9;color:#388e3c}.tfo{background:#fff3e0;color:#e65100}
-.tht{background:#fce4ec;color:#c62828}
-.b1{background:linear-gradient(135deg,#667eea,#764ba2)}
-.b2{background:linear-gradient(135deg,#11998e,#38ef7d)}
-.b3{background:linear-gradient(135deg,#f093fb,#f5576c)}
-.b4{background:linear-gradient(135deg,#4facfe,#00f2fe)}
-.b5{background:linear-gradient(135deg,#fa709a,#fee140)}
-.b6{background:linear-gradient(135deg,#a18cd1,#fbc2eb)}
-.b7{background:linear-gradient(135deg,#fccb90,#d57eeb)}
-.b8{background:linear-gradient(135deg,#43e97b,#38f9d7)}
-.d1{border-color:#667eea}.d2{border-color:#11998e}.d3{border-color:#f5576c}.d4{border-color:#4facfe}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7天减脂食谱 | 采购&打卡管理</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#22c55e',
+                        secondary: '#f0fdf4',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        .tab-active { @apply bg-primary text-white; }
+        .tab-normal { @apply bg-gray-100 hover:bg-gray-200; }
+        .card { @apply bg-white rounded-xl shadow-md p-4 mb-4; }
+        .progress-bar { @apply h-2 rounded-full bg-gray-200 overflow-hidden; }
+        .progress-fill { @apply h-full bg-primary transition-all duration-500; }
+    </style>
 </head>
-<body>
-<div class="hd"><h1>🏔️ 五一川西行程</h1><p>2026.04.28 - 05.05 · 杭州→成都→九寨沟→毕棚沟→四姑娘山</p></div>
-<div id="s1" class="sec on">
-<div class="dc op"><div class="dh" onclick="tg(this)"><div class="lt"><div class="badge b1"><span>4月</span><span class="n">28</span></div><div><h3>杭州 ✈️ 成都</h3><div class="sub">周二 · Day 1 · 出发日</div></div></div><span class="ar">▶</span></div><div class="dy"><div class="tl"><div class="ti"><div class="dot d1"></div><div class="tm">全天</div><div class="ct"><span class="tag tf">✈️ 飞行</span>杭州 → 成都，抵达后自由活动</div><div class="tp">💡 到达后入住酒店休整，自由安排</div></div></div></div></div>
-<div class="dc"><div class="dh" onclick="tg(this)"><div class="lt"><div class="badge b2"><span>4月</span><span class="n">29</span></div><div><h3>成都自由活动</h3><div class="sub">周三 · Day 2 · 自由探索</div></div></div><span class="ar">▶</span></div><div class="dy"><div class="tl"><div class="ti"><div class="dot d1"></div><div class="tm">全天</div><div class="ct">成都市区自由活动，逛吃休闲</div><div class="tp">💡 春熙路、太古里、宽窄巷子、人民公园盖碗茶，随心安排</div></div></div></div></div>
-<div class="dc"><div class="dh" onclick="tg(this)"><div class="lt"><div class="badge b3"><span>4月</span><span class="n">30</span></div><div><h3>成都 🚄 九寨沟</h3><div class="sub">周四 · Day 3 · 前往九寨沟</div></div></div><span class="ar">▶</span></div><div class="dy"><div class="tl">
-<div class="ti"><div class="dot d1"></div><div class="tm">白天</div><div class="ct"><span class="tag ts">🏙️ 游览</span>成都市区补充物资</div><div class="tp">💡 买好干粮零食、暖宝宝；可逛逛人民公园喝盖碗茶</div></div>
-<div class="ti"><div class="dot d2"></div><div class="tm">傍晚</div><div class="ct"><span class="tag tt">🚄 高铁</span>成都 → 九寨沟（约2-3小时）</div><div class="tp">💡 提前购票，选靠窗座位，沿途风景壮美</div><div class="ps">📸 高铁沿途可拍岷江河谷、高山峡谷风光</div>
-<div class="photo-gallery">
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=300&h=200&fit=crop&q=80" alt="峡谷风光"><div class="cap">山间峡谷</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=300&h=200&fit=crop&q=80" alt="高山河谷"><div class="cap">河谷风光</div></div>
-</div></div>
-<div class="ti"><div class="dot d3"></div><div class="tm">晚上</div><div class="ct"><span class="tag tht">🏨 住宿</span>入住九寨沟沟口附近酒店</div><div class="tp">💡 海拔约2000m，注意高反，多喝水少剧烈运动；提前吃红景天</div></div>
-</div></div></div>
-<div class="dc"><div class="dh" onclick="tg(this)"><div class="lt"><div class="badge b4"><span>5月</span><span class="n">01</span></div><div><h3>九寨沟一日游 🚄 回成都</h3><div class="sub">周五 · Day 4 · 五一第一天</div></div></div><span class="ar">▶</span></div><div class="dy"><div class="tl">
-<div class="ti"><div class="dot d1"></div><div class="tm">7:00</div><div class="ct"><span class="tag ts">🏞️ 入园</span>早起排队进九寨沟景区</div><div class="tp">💡 五一人多！建议7点前到沟口排队，带好干粮和水</div></div>
-<div class="ti"><div class="dot d2"></div><div class="tm">上午</div><div class="ct"><span class="tag ts">🏞️ 日则沟</span>箭竹海 → 熊猫海 → 五花海 → 珍珠滩瀑布 → 镜海</div><div class="tp">💡 五花海是九寨沟精华，建议多停留；珍珠滩瀑布气势磅礴</div><div class="ps">📸 五花海：湖边栈道俯拍，色彩斑斓的湖水是九寨标志；镜海：无风时水面倒影如镜，早上最佳</div>
-<div class="photo-gallery">
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1598887142487-3c854d51eabb?w=300&h=200&fit=crop&q=80" alt="五花海"><div class="cap">五花海·斑斓湖水</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=300&h=200&fit=crop&q=80" alt="镜海倒影"><div class="cap">镜海·水面倒影</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=300&h=200&fit=crop&q=80" alt="九寨沟栈道"><div class="cap">湖边栈道</div></div>
-</div></div>
-<div class="ti"><div class="dot d3"></div><div class="tm">中午</div><div class="ct"><span class="tag ts">🏞️ 则查洼沟</span>长海 → 五彩池</div><div class="tp">💡 长海是九寨沟最大海子；五彩池虽小但色彩最艳丽</div><div class="ps">📸 五彩池：阳光下色彩变幻，从高处俯拍效果最佳；长海：远处雪山+湖面构图</div>
-<div class="photo-gallery">
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1580137189272-c9379f8864fd?w=300&h=200&fit=crop&q=80" alt="五彩池"><div class="cap">五彩池·色彩变幻</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop&q=80" alt="雪山湖泊"><div class="cap">长海·雪山湖面</div></div>
-</div></div>
-<div class="ti"><div class="dot d4"></div><div class="tm">下午</div><div class="ct"><span class="tag ts">🏞️ 树正沟</span>诺日朗瀑布 → 树正群海 → 芦苇海</div><div class="tp">💡 诺日朗瀑布是中国最宽的钙华瀑布；树正群海层层叠叠很壮观</div><div class="ps">📸 诺日朗瀑布：正面全景+侧面近拍水帘；树正群海：栈道上拍层叠海子</div>
-<div class="photo-gallery">
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1432405972618-c6b0cfba8b03?w=300&h=200&fit=crop&q=80" alt="瀑布"><div class="cap">诺日朗瀑布</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=300&h=200&fit=crop&q=80" alt="层叠海子"><div class="cap">树正群海</div></div>
-</div></div>
-<div class="ti"><div class="dot d1"></div><div class="tm">晚上</div><div class="ct"><span class="tag tt">🚄 高铁</span>九寨沟 → 成都</div><div class="tp">💡 景区出来后直奔高铁站，预留1小时以上交通时间</div></div>
-</div></div></div>
-<div class="dc"><div class="dh" onclick="tg(this)"><div class="lt"><div class="badge b5"><span>5月</span><span class="n">02</span></div><div><h3>成都 → 毕棚沟</h3><div class="sub">周六 · Day 5 · 川西之旅开始</div></div></div><span class="ar">▶</span></div><div class="dy"><div class="tl">
-<div class="ti"><div class="dot d1"></div><div class="tm">7:00 出发</div><div class="ct"><span class="tag tt">🚗 包车</span>成都 → 毕棚沟（约4-5小时）</div><div class="tp">💡 走都汶高速→理县方向；沿途经过桃坪羌寨可停留30分钟</div><div class="ps">📸 桃坪羌寨：千年碉楼+石砌建筑，拍人文古建；沿途岷江河谷风光</div>
-<div class="photo-gallery">
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1528164344705-47542687000d?w=300&h=200&fit=crop&q=80" alt="古建筑"><div class="cap">桃坪羌寨·碉楼</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=300&h=200&fit=crop&q=80" alt="河谷风光"><div class="cap">岷江河谷</div></div>
-</div></div>
-<div class="ti"><div class="dot d2"></div><div class="tm">12:00</div><div class="ct"><span class="tag tfo">🍜 午餐</span>理县县城午餐，补充体力</div><div class="tp">💡 推荐尝试藏式牦牛肉、酥油茶</div></div>
-<div class="ti"><div class="dot d3"></div><div class="tm">下午</div><div class="ct"><span class="tag ts">🏔️ 景点</span>毕棚沟景区游览（景区观光车+徒步）</div><div class="tp">💡 路线：龙王海→卓玛滩→白龙瀑布→磐羊湖→月亮湾；海拔2000-4500m，量力而行</div><div class="ps">📸 磐羊湖：雪山倒映湖面，绝美！站在湖边栈道拍；龙王海：原始森林环绕的碧绿湖水；白龙瀑布：长曝光拍丝绸般水流</div>
-<div class="photo-gallery">
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=300&h=200&fit=crop&q=80" alt="雪山湖泊"><div class="cap">磐羊湖·雪山倒影</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=300&h=200&fit=crop&q=80" alt="原始森林湖"><div class="cap">龙王海·森林湖</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=300&h=200&fit=crop&q=80" alt="瀑布"><div class="cap">白龙瀑布</div></div>
-</div></div>
-<div class="ti"><div class="dot d4"></div><div class="tm">晚上</div><div class="ct"><span class="tag tht">🏨 住宿</span>理县或毕棚沟附近</div><div class="tp">💡 海拔较高，晚上冷，穿好羽绒服；如有高反症状多休息多喝水</div></div>
-</div></div></div>
-<div class="dc"><div class="dh" onclick="tg(this)"><div class="lt"><div class="badge b6"><span>5月</span><span class="n">03</span></div><div><h3>毕棚沟 → 四姑娘山</h3><div class="sub">周日 · Day 6 · 高原风光</div></div></div><span class="ar">▶</span></div><div class="dy"><div class="tl">
-<div class="ti"><div class="dot d1"></div><div class="tm">8:00 出发</div><div class="ct"><span class="tag tt">🚗 车程</span>毕棚沟 → 四姑娘山（约2-3小时）</div><div class="tp">💡 翻越巴朗山垭口（海拔4487m），可能有积雪，注意高反；沿途风景壮美</div><div class="ps">📸 巴朗山垭口：云海+雪山全景，绝佳观景台！停车拍照；盘山公路：航拍视角的S弯公路+雪山背景</div>
-<div class="photo-gallery">
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=300&h=200&fit=crop&q=80" alt="云海雪山"><div class="cap">巴朗山·云海雪山</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=300&h=200&fit=crop&q=80" alt="雪山全景"><div class="cap">垭口·雪山全景</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1527489377706-5bf97e608852?w=300&h=200&fit=crop&q=80" alt="盘山公路"><div class="cap">盘山公路·S弯</div></div>
-</div></div>
-<div class="ti"><div class="dot d2"></div><div class="tm">11:00</div><div class="ct"><span class="tag ts">🏔️ 猫鼻梁观景台</span>远眺四姑娘山全貌</div><div class="tp">💡 这里是看四姑娘山四座山峰最经典的角度</div><div class="ps">📸 猫鼻梁：四姑娘山四峰一字排开的经典机位！日落时分金山效果绝佳</div>
-<div class="photo-gallery">
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=300&h=200&fit=crop&q=80" alt="雪山日落"><div class="cap">四姑娘山·日落金山</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=300&h=200&fit=crop&q=80" alt="山峰全景"><div class="cap">猫鼻梁·四峰全景</div></div>
-</div></div>
-<div class="ti"><div class="dot d3"></div><div class="tm">下午</div><div class="ct"><span class="tag ts">🏔️ 双桥沟</span>四姑娘山最成熟的沟，观光车游览</div><div class="tp">💡 路线：人参果坪→撵鱼坝→布达拉峰→红杉林→四姑娘山倒影→猎人峰</div><div class="ps">📸 四姑娘山倒影：湖面倒映雪山，无风时最佳；猎人峰：造型独特的尖峰；红杉林：秋色虽过但原始森林氛围感强</div>
-<div class="photo-gallery">
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=300&h=200&fit=crop&q=80" alt="雪山倒影"><div class="cap">双桥沟·雪山倒影</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?w=300&h=200&fit=crop&q=80" alt="尖峰"><div class="cap">猎人峰</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1542202229-7d93c33f5d07?w=300&h=200&fit=crop&q=80" alt="原始森林"><div class="cap">红杉林·原始森林</div></div>
-</div></div>
-<div class="ti"><div class="dot d4"></div><div class="tm">晚上</div><div class="ct"><span class="tag tht">🏨 住宿</span>日隆镇（四姑娘山镇）</div><div class="tp">💡 海拔3200m，晚上可能零下，穿最厚的衣服；镇上有藏餐馆可体验</div></div>
-</div></div></div>
-<div class="dc"><div class="dh" onclick="tg(this)"><div class="lt"><div class="badge b7"><span>5月</span><span class="n">04</span></div><div><h3>四姑娘山 → 成都</h3><div class="sub">周一 · Day 7 · 返回成都</div></div></div><span class="ar">▶</span></div><div class="dy"><div class="tl">
-<div class="ti"><div class="dot d1"></div><div class="tm">5:30 早起</div><div class="ct"><span class="tag ts">🌅 日出</span>猫鼻梁看四姑娘山日出（可选）</div><div class="tp">💡 日出约6:00-6:30，提前到位；天气好时日照金山非常震撼</div><div class="ps">📸 日照金山：日出时雪山顶被染成金色，用长焦拍特写+广角拍全景</div>
-<div class="photo-gallery">
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=300&h=200&fit=crop&q=80" alt="日照金山"><div class="cap">日照金山·长焦特写</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop&q=80" alt="日出雪山"><div class="cap">日出·雪山全景</div></div>
-</div></div>
-<div class="ti"><div class="dot d2"></div><div class="tm">上午</div><div class="ct"><span class="tag ts">🏔️ 长坪沟徒步</span>轻度徒步2-3小时（可选）</div><div class="tp">💡 长坪沟是户外徒步天堂，前段栈道平缓适合休闲走；不想徒步可直接返程</div><div class="ps">📸 长坪沟：原始森林+溪流+远处雪山，徒步途中随手拍都是大片</div>
-<div class="photo-gallery">
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1440186347098-386b7459ad6b?w=300&h=200&fit=crop&q=80" alt="森林溪流"><div class="cap">长坪沟·森林溪流</div></div>
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=300&h=200&fit=crop&q=80" alt="徒步雪山"><div class="cap">徒步·远处雪山</div></div>
-</div></div>
-<div class="ti"><div class="dot d3"></div><div class="tm">中午出发</div><div class="ct"><span class="tag tt">🚗 车程</span>四姑娘山 → 成都（约4-5小时）</div><div class="tp">💡 经映秀、都江堰返回；可顺路停映秀地震遗址（30分钟）</div><div class="ps">📸 映秀地震遗址：纪念性拍摄；都汶高速沿途河谷风光</div>
-<div class="photo-gallery">
-<div class="photo-card"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=300&h=200&fit=crop&q=80" alt="河谷风光"><div class="cap">都汶高速·河谷</div></div>
-</div></div>
-<div class="ti"><div class="dot d4"></div><div class="tm">晚上</div><div class="ct"><span class="tag tfo">🍜 美食</span>成都最后一顿大餐！</div><div class="tp">💡 推荐：马路边边串串、烤匠烤鱼、蜀大侠火锅</div></div>
-</div></div></div>
-<div class="dc"><div class="dh" onclick="tg(this)"><div class="lt"><div class="badge b8"><span>5月</span><span class="n">05</span></div><div><h3>成都 🚄 杭州</h3><div class="sub">周二 · Day 8 · 返程日</div></div></div><span class="ar">▶</span></div><div class="dy"><div class="tl">
-<div class="ti"><div class="dot d1"></div><div class="tm">上午</div><div class="ct"><span class="tag tt">🚄 高铁</span>成都东站 → 杭州东站（约8-10小时）</div><div class="tp">💡 车程较长，备好充电宝、耳机、零食、颈枕；也可考虑改飞机</div></div>
-<div class="ti"><div class="dot d2"></div><div class="tm">晚上</div><div class="ct">抵达杭州，回家休息 🏠</div><div class="tp">💡 整理照片，回味美好旅程！明天上班加油 💪</div></div>
-</div></div></div>
-</div>
-<div id="s2" class="sec">
-<div class="wc"><h3>🌡️ 各目的地参考天气（4月底-5月初）</h3><div class="wg">
-<div class="wi"><div class="cy">🏙️ 成都</div><div class="te">16-26°C</div><div class="de">多云为主，偶有小雨</div></div>
-<div class="wi"><div class="cy">🏞️ 九寨沟</div><div class="te">5-18°C</div><div class="de">早晚较冷，昼夜温差大</div></div>
-<div class="wi"><div class="cy">🏔️ 毕棚沟</div><div class="te">2-15°C</div><div class="de">高海拔，风大，可能有雨雪</div></div>
-<div class="wi"><div class="cy">🏔️ 四姑娘山</div><div class="te">-2~12°C</div><div class="de">高海拔寒冷，夜间可能零下</div></div>
-</div><div class="wt">⚠️ 川西高原天气多变，出行前请查看最新天气预报<br>⚠️ 海拔每升高1000m，气温约下降6°C<br>⚠️ 紫外线强烈，防晒必备<br>⚠️ 5月初高原可能有雨雪，备好防水装备</div></div>
-<div class="dp"><h3>📅 4.28 周二 · 杭州→成都</h3><div class="pt"><span class="pk im">身份证/机票</span><span class="pk im">充电宝</span><span class="pk">春装薄外套</span><span class="pk">耳机</span></div></div>
-<div class="dp"><h3>📅 4.29 周三 · 成都自由活动</h3><div class="pt"><span class="pk">舒适步行鞋</span><span class="pk">防晒霜</span><span class="pk">小背包</span><span class="pk">肠胃药</span></div></div>
-<div class="dp"><h3>📅 4.30 周四 · 成都→九寨沟</h3><div class="pt"><span class="pk im">高铁票/12306</span><span class="pk im">厚外套/冲锋衣</span><span class="pk">保温杯</span><span class="pk">红景天</span><span class="pk">暖宝宝</span></div></div>
-<div class="dp"><h3>📅 5.1 周五 · 九寨沟游览</h3><div class="pt"><span class="pk im">景区门票/预约码</span><span class="pk im">冲锋衣+抓绒</span><span class="pk">登山鞋</span><span class="pk">雨衣</span><span class="pk">干粮零食</span><span class="pk">相机</span><span class="pk">自拍杆</span></div></div>
-<div class="dp"><h3>📅 5.2 周六 · 成都→毕棚沟</h3><div class="pt"><span class="pk im">冲锋衣+羽绒内胆</span><span class="pk im">登山鞋</span><span class="pk">登山杖</span><span class="pk">保温杯</span><span class="pk">高反药</span><span class="pk">暖宝宝</span><span class="pk">能量棒</span></div></div>
-<div class="dp"><h3>📅 5.3 周日 · 毕棚沟→四姑娘山</h3><div class="pt"><span class="pk im">最厚衣服全穿上</span><span class="pk im">帽子+手套+围巾</span><span class="pk">防晒霜SPF50+</span><span class="pk">墨镜</span><span class="pk">氧气罐</span><span class="pk">巧克力</span></div></div>
-<div class="dp"><h3>📅 5.4 周一 · 四姑娘山→成都</h3><div class="pt"><span class="pk im">保暖衣物（看日出）</span><span class="pk">登山鞋</span><span class="pk">相机</span><span class="pk">晕车药</span><span class="pk">零食饮水</span></div></div>
-<div class="dp"><h3>📅 5.5 周二 · 成都→杭州</h3><div class="pt"><span class="pk im">高铁票/12306</span><span class="pk im">充电宝</span><span class="pk">耳机</span><span class="pk">颈枕</span><span class="pk">零食</span></div></div>
-</div>
-<div id="s3" class="sec">
-<div class="sb"><div class="si"><div class="nm" id="tc">0</div><div class="lb">总计</div></div><div class="si"><div class="nm" id="cc">0</div><div class="lb">已备</div></div><div class="si"><div class="nm" id="rc">0</div><div class="lb">待备</div></div></div>
-<div class="cg"><h3>📄 证件票务</h3>
-<div class="ci"><input type="checkbox" id="k1" onchange="ck(this)"><label for="k1">身份证</label></div>
-<div class="ci"><input type="checkbox" id="k2" onchange="ck(this)"><label for="k2">机票（4.28 杭州→成都）</label></div>
-<div class="ci"><input type="checkbox" id="k3" onchange="ck(this)"><label for="k3">高铁票（4.30 成都→九寨沟）</label></div>
-<div class="ci"><input type="checkbox" id="k4" onchange="ck(this)"><label for="k4">高铁票（5.1 九寨沟→成都）</label></div>
-<div class="ci"><input type="checkbox" id="k5" onchange="ck(this)"><label for="k5">高铁票（5.5 成都→杭州）</label></div>
-<div class="ci"><input type="checkbox" id="k6" onchange="ck(this)"><label for="k6">九寨沟门票/预约</label></div>
-<div class="ci"><input type="checkbox" id="k7" onchange="ck(this)"><label for="k7">毕棚沟门票</label></div>
-<div class="ci"><input type="checkbox" id="k8" onchange="ck(this)"><label for="k8">四姑娘山门票（双桥沟）</label></div>
-<div class="ci"><input type="checkbox" id="k9" onchange="ck(this)"><label for="k9">酒店预订确认</label></div>
-<div class="ci"><input type="checkbox" id="k10" onchange="ck(this)"><label for="k10">包车/租车预订</label></div>
-</div>
-<div class="cg"><h3>👕 衣物</h3>
-<div class="ci"><input type="checkbox" id="k11" onchange="ck(this)"><label for="k11">冲锋衣（防风防水）</label><span class="nt">必备</span></div>
-<div class="ci"><input type="checkbox" id="k12" onchange="ck(this)"><label for="k12">羽绒服/羽绒内胆</label><span class="nt">高原必备</span></div>
-<div class="ci"><input type="checkbox" id="k13" onchange="ck(this)"><label for="k13">抓绒衣</label></div>
-<div class="ci"><input type="checkbox" id="k14" onchange="ck(this)"><label for="k14">速干T恤 ×3-4</label></div>
-<div class="ci"><input type="checkbox" id="k15" onchange="ck(this)"><label for="k15">长裤 ×2</label></div>
-<div class="ci"><input type="checkbox" id="k16" onchange="ck(this)"><label for="k16">内衣裤 ×8</label></div>
-<div class="ci"><input type="checkbox" id="k17" onchange="ck(this)"><label for="k17">袜子 ×8（含厚袜）</label></div>
-<div class="ci"><input type="checkbox" id="k18" onchange="ck(this)"><label for="k18">帽子（遮阳+保暖各一）</label></div>
-<div class="ci"><input type="checkbox" id="k19" onchange="ck(this)"><label for="k19">手套</label><span class="nt">高原早晚冷</span></div>
-<div class="ci"><input type="checkbox" id="k20" onchange="ck(this)"><label for="k20">围巾/魔术头巾</label></div>
-<div class="ci"><input type="checkbox" id="k21" onchange="ck(this)"><label for="k21">登山鞋/防滑徒步鞋</label><span class="nt">必备</span></div>
-<div class="ci"><input type="checkbox" id="k22" onchange="ck(this)"><label for="k22">拖鞋</label></div>
-</div>
-<div class="cg"><h3>🎒 装备</h3>
-<div class="ci"><input type="checkbox" id="k23" onchange="ck(this)"><label for="k23">双肩背包</label></div>
-<div class="ci"><input type="checkbox" id="k24" onchange="ck(this)"><label for="k24">行李箱</label></div>
-<div class="ci"><input type="checkbox" id="k25" onchange="ck(this)"><label for="k25">登山杖</label></div>
-<div class="ci"><input type="checkbox" id="k26" onchange="ck(this)"><label for="k26">雨衣/便携雨伞</label></div>
-<div class="ci"><input type="checkbox" id="k27" onchange="ck(this)"><label for="k27">保温杯</label><span class="nt">高原多喝热水</span></div>
-<div class="ci"><input type="checkbox" id="k28" onchange="ck(this)"><label for="k28">墨镜（偏光）</label><span class="nt">防紫外线+雪盲</span></div>
-</div>
-<div class="cg"><h3>📱 电子设备</h3>
-<div class="ci"><input type="checkbox" id="k29" onchange="ck(this)"><label for="k29">手机+充电器</label></div>
-<div class="ci"><input type="checkbox" id="k30" onchange="ck(this)"><label for="k30">充电宝 ×2</label><span class="nt">高原耗电快</span></div>
-<div class="ci"><input type="checkbox" id="k31" onchange="ck(this)"><label for="k31">相机+存储卡+电池</label></div>
-<div class="ci"><input type="checkbox" id="k32" onchange="ck(this)"><label for="k32">耳机</label></div>
-<div class="ci"><input type="checkbox" id="k33" onchange="ck(this)"><label for="k33">数据线（多合一）</label></div>
-<div class="ci"><input type="checkbox" id="k34" onchange="ck(this)"><label for="k34">自拍杆/三脚架</label></div>
-</div>
-<div class="cg"><h3>💊 药品健康</h3>
-<div class="ci"><input type="checkbox" id="k35" onchange="ck(this)"><label for="k35">红景天（提前1周服用）</label><span class="nt">抗高反</span></div>
-<div class="ci"><input type="checkbox" id="k36" onchange="ck(this)"><label for="k36">便携氧气罐 ×2-3</label><span class="nt">高原必备</span></div>
-<div class="ci"><input type="checkbox" id="k37" onchange="ck(this)"><label for="k37">感冒药</label></div>
-<div class="ci"><input type="checkbox" id="k38" onchange="ck(this)"><label for="k38">肠胃药</label><span class="nt">吃辣必备</span></div>
-<div class="ci"><input type="checkbox" id="k39" onchange="ck(this)"><label for="k39">创可贴</label></div>
-<div class="ci"><input type="checkbox" id="k40" onchange="ck(this)"><label for="k40">晕车药</label></div>
-<div class="ci"><input type="checkbox" id="k41" onchange="ck(this)"><label for="k41">暖宝宝 ×若干</label></div>
-<div class="ci"><input type="checkbox" id="k42" onchange="ck(this)"><label for="k42">口罩</label></div>
-</div>
-<div class="cg"><h3>🧴 洗护防晒</h3>
-<div class="ci"><input type="checkbox" id="k43" onchange="ck(this)"><label for="k43">防晒霜 SPF50+</label><span class="nt">高原紫外线强</span></div>
-<div class="ci"><input type="checkbox" id="k44" onchange="ck(this)"><label for="k44">润唇膏（带防晒）</label></div>
-<div class="ci"><input type="checkbox" id="k45" onchange="ck(this)"><label for="k45">保湿面霜</label><span class="nt">高原干燥</span></div>
-<div class="ci"><input type="checkbox" id="k46" onchange="ck(this)"><label for="k46">牙刷牙膏</label></div>
-<div class="ci"><input type="checkbox" id="k47" onchange="ck(this)"><label for="k47">毛巾</label></div>
-<div class="ci"><input type="checkbox" id="k48" onchange="ck(this)"><label for="k48">湿纸巾/纸巾</label></div>
-</div>
-<div class="cg"><h3>🍫 食品其他</h3>
-<div class="ci"><input type="checkbox" id="k49" onchange="ck(this)"><label for="k49">能量棒/巧克力</label></div>
-<div class="ci"><input type="checkbox" id="k50" onchange="ck(this)"><label for="k50">坚果/牛肉干</label></div>
-<div class="ci"><input type="checkbox" id="k51" onchange="ck(this)"><label for="k51">葡萄糖粉/糖果</label><span class="nt">缓解高反</span></div>
-<div class="ci"><input type="checkbox" id="k52" onchange="ck(this)"><label for="k52">密封袋</label></div>
-<div class="ci"><input type="checkbox" id="k53" onchange="ck(this)"><label for="k53">颈枕</label></div>
-<div class="ci"><input type="checkbox" id="k54" onchange="ck(this)"><label for="k54">现金</label><span class="nt">部分景区信号差</span></div>
-</div>
-</div>
-<div class="btabs">
-<div class="bt on" onclick="sw('s1',this)"><span class="ic">📅</span>行程</div>
-<div class="bt" onclick="sw('s2',this)"><span class="ic">🌤️</span>天气建议</div>
-<div class="bt" onclick="sw('s3',this)"><span class="ic">🎒</span>行李清单</div>
-</div>
-<script>
-function sw(id,el){document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));document.querySelectorAll('.bt').forEach(b=>b.classList.remove('on'));document.getElementById(id).classList.add('on');el.classList.add('on');if(id==='s3')us()}
-function tg(h){h.closest('.dc').classList.toggle('op')}
-function ck(cb){var i=cb.closest('.ci');cb.checked?i.classList.add('ck'):i.classList.remove('ck');sv();us()}
-function us(){var a=document.querySelectorAll('#s3 input[type=checkbox]'),c=document.querySelectorAll('#s3 input:checked');document.getElementById('tc').textContent=a.length;document.getElementById('cc').textContent=c.length;document.getElementById('rc').textContent=a.length-c.length}
-function sv(){var d={};document.querySelectorAll('#s3 input[type=checkbox]').forEach(function(cb){d[cb.id]=cb.checked});localStorage.setItem('trip2026',JSON.stringify(d))}
-function ld(){var s=localStorage.getItem('trip2026');if(s){var d=JSON.parse(s);Object.keys(d).forEach(function(id){var cb=document.getElementById(id);if(cb){cb.checked=d[id];if(d[id])cb.closest('.ci').classList.add('ck')}})}us()}
-document.addEventListener('DOMContentLoaded',ld);
-</script>
+<body class="bg-gray-50 min-h-screen pb-20">
+    <div class="container mx-auto px-3 py-5 max-w-2xl">
+        <h1 class="text-[22px] font-bold text-center text-gray-800 mb-6">7天减脂食谱 交互管理</h1>
+
+        <!-- Tab 切换 -->
+        <div class="flex rounded-lg overflow-hidden mb-6">
+            <button id="tab1" class="flex-1 py-3 tab-active font-medium" onclick="switchTab(1)">
+                <i class="fa fa-shopping-cart mr-1"></i> 采购&备餐
+            </button>
+            <button id="tab2" class="flex-1 py-3 tab-normal font-medium" onclick="switchTab(2)">
+                <i class="fa fa-calendar-check-o mr-1"></i> 每日食谱&打卡
+            </button>
+        </div>
+
+        <!-- 页面1: 采购&备餐 -->
+        <div id="page1" class="page">
+            <!-- 采购清单 -->
+            <div class="card">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="font-bold text-lg"><i class="fa fa-list-ul text-primary mr-1"></i> 采购清单</h2>
+                    <span id="buyPercent" class="text-primary font-medium">0%</span>
+                </div>
+                <div class="progress-bar mb-3">
+                    <div id="buyProgress" class="progress-fill" style="width:0%"></div>
+                </div>
+                <div id="buyList" class="space-y-2"></div>
+            </div>
+
+            <!-- 备餐准备 -->
+            <div class="card">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="font-bold text-lg"><i class="fa fa-cogs text-primary mr-1"></i> 备餐准备</h2>
+                    <span id="prepPercent" class="text-primary font-medium">0%</span>
+                </div>
+                <div class="progress-bar mb-3">
+                    <div id="prepProgress" class="progress-fill" style="width:0%"></div>
+                </div>
+                <div id="prepList" class="space-y-2"></div>
+            </div>
+        </div>
+
+        <!-- 页面2: 每日食谱&打卡 -->
+        <div id="page2" class="page hidden">
+            <!-- 天数选择 -->
+            <div class="grid grid-cols-7 gap-1 mb-4">
+                <button onclick="switchDay(1)" class="day-btn py-2 rounded bg-primary text-white text-sm">D1</button>
+                <button onclick="switchDay(2)" class="day-btn py-2 rounded bg-gray-100 text-sm">D2</button>
+                <button onclick="switchDay(3)" class="day-btn py-2 rounded bg-gray-100 text-sm">D3</button>
+                <button onclick="switchDay(4)" class="day-btn py-2 rounded bg-gray-100 text-sm">D4</button>
+                <button onclick="switchDay(5)" class="day-btn py-2 rounded bg-gray-100 text-sm">D5</button>
+                <button onclick="switchDay(6)" class="day-btn py-2 rounded bg-gray-100 text-sm">D6</button>
+                <button onclick="switchDay(7)" class="day-btn py-2 rounded bg-gray-100 text-sm">D7</button>
+            </div>
+
+            <!-- 当日食谱 -->
+            <div class="card">
+                <h3 id="dayTitle" class="font-bold text-lg mb-3">第1天 食谱</h3>
+                <div id="dayDiet" class="space-y-3"></div>
+            </div>
+
+            <!-- 当日执行记录 -->
+            <div class="card mt-4">
+                <h3 class="font-bold text-lg mb-3"><i class="fa fa-pencil text-primary mr-1"></i> 当日执行记录</h3>
+                <div class="mb-3">
+                    <label class="block text-sm text-gray-600 mb-1">完成状态</label>
+                    <select id="dayStatus" class="w-full border rounded-lg px-3 py-2 outline-primary">
+                        <option value="未开始">未开始</option>
+                        <option value="已完成">已完成</option>
+                        <option value="部分完成">部分完成</option>
+                        <option value="未完成">未完成</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="block text-sm text-gray-600 mb-1">备注记录</label>
+                    <textarea id="dayRemark" rows="3" class="w-full border rounded-lg px-3 py-2 outline-primary" placeholder="记录饮食感受、体重变化、调整事项..."></textarea>
+                </div>
+                <button onclick="saveDayRecord()" class="w-full bg-primary text-white py-2 rounded-lg font-medium">
+                    <i class="fa fa-save mr-1"></i> 保存记录
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 采购清单数据
+        const buyListData = [
+            {name:'全麦吐司', unit:'1小袋'},
+            {name:'红薯', unit:'300g'},
+            {name:'甜玉米', unit:'2根'},
+            {name:'牛排', unit:'400g'},
+            {name:'鸡胸肉', unit:'700g'},
+            {name:'龙利鱼柳', unit:'300g'},
+            {name:'去皮鸡腿', unit:'1个'},
+            {name:'瘦羊肉片', unit:'200g'},
+            {name:'鸡蛋', unit:'10个'},
+            {name:'无糖希腊酸奶', unit:'400g'},
+            {name:'原味杏仁', unit:'100g'},
+            {name:'球生菜', unit:'1大颗'},
+            {name:'菠菜', unit:'200g'},
+            {name:'西兰花', unit:'300g'},
+            {name:'西红柿', unit:'3个'},
+            {name:'胡萝卜', unit:'2根'},
+            {name:'芹菜', unit:'1把'},
+            {name:'黄瓜', unit:'2根'},
+            {name:'苹果', unit:'3个'},
+            {name:'橙子', unit:'2个'},
+            {name:'柠檬', unit:'2个'},
+            {name:'黑咖啡/绿茶', unit:'按需'},
+            {name:'橄榄油', unit:'小瓶装'}
+        ];
+
+        // 备餐准备数据
+        const prepListData = [
+            {name:'肉类按份分装冷冻'},
+            {name:'提前煮好备用鸡蛋'},
+            {name:'蔬菜清洗分装保鲜'},
+            {name:'鸡胸肉提前腌制'},
+            {name:'备好沙拉调味调料'},
+            {name:'准备每日喝水水杯'}
+        ];
+
+        // 7天食谱数据
+        const dietData = [
+            {
+                title:'第1天 食谱',
+                list:[
+                    '早餐：无糖黑咖啡/淡绿茶 + 1片全麦吐司 + 1个水煮蛋',
+                    '中餐：2个水煮蛋 + 1个西红柿 + 水煮菠菜 + 50g熟红薯',
+                    '晚餐：200g牛排 + 生菜黄瓜沙拉',
+                    '加餐：10颗原味杏仁'
+                ]
+            },
+            {
+                title:'第2天 食谱',
+                list:[
+                    '早餐：无糖希腊酸奶150g + 半个苹果',
+                    '中餐：200g水煮鸡胸肉 + 100g熟玉米 + 生菜沙拉',
+                    '晚餐：150g清蒸龙利鱼 + 清炒西兰花',
+                    '加餐：1小盒无糖豆浆'
+                ]
+            },
+            {
+                title:'第3天 食谱',
+                list:[
+                    '早餐：淡绿茶 + 1片全麦吐司 + 1个水煮蛋',
+                    '中餐：150g煎鸡胸肉 + 生菜番茄沙拉 + 50g熟红薯',
+                    '晚餐：水煮芹菜段 + 1个西红柿 + 1个苹果',
+                    '加餐：1根小黄瓜'
+                ]
+            },
+            {
+                title:'第4天 食谱',
+                list:[
+                    '早餐：无糖黑咖啡/淡绿茶 + 1个橙子',
+                    '中餐：2个水煮蛋 + 清炒胡萝卜丝 + 100g熟玉米',
+                    '晚餐：150g水煮鸡胸肉 + 生菜沙拉 + 无糖希腊酸奶',
+                    '加餐：少量蓝莓'
+                ]
+            },
+            {
+                title:'第5天 食谱',
+                list:[
+                    '早餐：淡绿茶 + 1个水煮蛋',
+                    '中餐：150g清蒸龙利鱼 + 生菜黄瓜沙拉 + 50g熟红薯',
+                    '晚餐：200g牛排 + 清炒西兰花',
+                    '加餐：10颗原味杏仁'
+                ]
+            },
+            {
+                title:'第6天 食谱',
+                list:[
+                    '早餐：无糖黑咖啡/淡绿茶 + 1片全麦吐司',
+                    '中餐：2个水煮蛋 + 清炒胡萝卜丝 + 不限量生菜',
+                    '晚餐：200g去皮烤鸡腿 + 生菜柠檬沙拉',
+                    '加餐：1个小番茄'
+                ]
+            },
+            {
+                title:'第7天 食谱',
+                list:[
+                    '早餐：淡绿茶（无糖）',
+                    '中餐：150g水煮鸡胸肉 + 生菜黄瓜沙拉',
+                    '晚餐：200g瘦羊肉片 + 1个苹果',
+                    '加餐：1盒无糖希腊酸奶'
+                ]
+            }
+        ];
+
+        // 本地存储
+        let store = JSON.parse(localStorage.getItem('dietStore')) || {
+            buy: [],
+            prep: [],
+            dayRecord: [{},{},{},{},{},{},{}]
+        };
+        let currentDay = 1;
+
+        // 初始化存储数据
+        if (store.buy.length !== buyListData.length) {
+            store.buy = Array(buyListData.length).fill(false);
+        }
+        if (store.prep.length !== prepListData.length) {
+            store.prep = Array(prepListData.length).fill(false);
+        }
+
+        // Tab 切换
+        function switchTab(num) {
+            document.querySelectorAll('.page').forEach(el => el.classList.add('hidden'));
+            document.getElementById('page' + num).classList.remove('hidden');
+            document.querySelectorAll('[id^="tab"]').forEach(el => {
+                el.className = 'flex-1 py-3 tab-normal font-medium';
+            });
+            document.getElementById('tab' + num).className = 'flex-1 py-3 tab-active font-medium';
+        }
+
+        // 渲染采购清单
+        function renderBuyList() {
+            const wrap = document.getElementById('buyList');
+            wrap.innerHTML = '';
+            buyListData.forEach((item, idx) => {
+                const chk = store.buy[idx] ? 'checked' : '';
+                wrap.innerHTML += `
+                <div class="flex items-center justify-between">
+                    <label class="flex items-center cursor-pointer">
+                        <input type="checkbox" ${chk} onchange="toggleBuy(${idx})" class="w-4 h-4 text-primary accent-primary">
+                        <span class="ml-2 ${store.buy[idx] ? 'line-through text-gray-400' : ''}">${item.name}</span>
+                    </label>
+                    <span class="text-sm text-gray-500">${item.unit}</span>
+                </div>`;
+            });
+            calcBuyProgress();
+        }
+
+        // 渲染备餐清单
+        function renderPrepList() {
+            const wrap = document.getElementById('prepList');
+            wrap.innerHTML = '';
+            prepListData.forEach((item, idx) => {
+                const chk = store.prep[idx] ? 'checked' : '';
+                wrap.innerHTML += `
+                <label class="flex items-center cursor-pointer">
+                    <input type="checkbox" ${chk} onchange="togglePrep(${idx})" class="w-4 h-4 text-primary accent-primary">
+                    <span class="ml-2 ${store.prep[idx] ? 'line-through text-gray-400' : ''}">${item.name}</span>
+                </label>`;
+            });
+            calcPrepProgress();
+        }
+
+        // 切换采购项状态
+        function toggleBuy(idx) {
+            store.buy[idx] = !store.buy[idx];
+            saveStore();
+            renderBuyList();
+        }
+
+        // 切换备餐项状态
+        function togglePrep(idx) {
+            store.prep[idx] = !store.prep[idx];
+            saveStore();
+            renderPrepList();
+        }
+
+        // 计算采购进度
+        function calcBuyProgress() {
+            const total = buyListData.length;
+            const done = store.buy.filter(Boolean).length;
+            const pct = Math.round(done / total * 100);
+            document.getElementById('buyProgress').style.width = pct + '%';
+            document.getElementById('buyPercent').innerText = pct + '%';
+        }
+
+        // 计算备餐进度
+        function calcPrepProgress() {
+            const total = prepListData.length;
+            const done = store.prep.filter(Boolean).length;
+            const pct = Math.round(done / total * 100);
+            document.getElementById('prepProgress').style.width = pct + '%';
+            document.getElementById('prepPercent').innerText = pct + '%';
+        }
+
+        // 切换天数
+        function switchDay(day) {
+            currentDay = day;
+            document.querySelectorAll('.day-btn').forEach((el, i) => {
+                el.className = i + 1 === day
+                    ? 'day-btn py-2 rounded bg-primary text-white text-sm'
+                    : 'day-btn py-2 rounded bg-gray-100 text-sm';
+            });
+            const diet = dietData[day - 1];
+            document.getElementById('dayTitle').innerText = diet.title;
+            const wrap = document.getElementById('dayDiet');
+            wrap.innerHTML = '';
+            diet.list.forEach(item => {
+                wrap.innerHTML += `
+                <div class="bg-secondary p-3 rounded-lg text-sm">
+                    <i class="fa fa-check-circle text-primary mr-1"></i>${item}
+                </div>`;
+            });
+            loadDayRecord();
+        }
+
+        // 加载当日记录
+        function loadDayRecord() {
+            const rec = store.dayRecord[currentDay - 1] || {};
+            document.getElementById('dayStatus').value = rec.status || '未开始';
+            document.getElementById('dayRemark').value = rec.remark || '';
+        }
+
+        // 保存当日记录
+        function saveDayRecord() {
+            const status = document.getElementById('dayStatus').value;
+            const remark = document.getElementById('dayRemark').value;
+            store.dayRecord[currentDay - 1] = { status, remark };
+            saveStore();
+            alert('当日记录保存成功！');
+        }
+
+        // 保存到本地存储
+        function saveStore() {
+            localStorage.setItem('dietStore', JSON.stringify(store));
+        }
+
+        // 页面加载初始化
+        window.onload = function() {
+            renderBuyList();
+            renderPrepList();
+            switchDay(1);
+        }
+    </script>
 </body>
 </html>
